@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Reviews Page";
+}
+@model restauranter.Models.Review
+
+<div class="row">
+  <div class="col-sm-5 col-md-6">
+      @{
+         foreach (var review in @ViewBag.Results)
+         {
+         <h4>Review For: @review.resto_name</h4>
+         <h4>Reviewer: @review.reviewer_name @review.created_at.</h4>
+         <h4>Rating: @review.rating Star</h4>
+         <div class="row ml-4">
+            <div class="col">
+                <h5>@review.review </h5>
+            </div>
+        </div>
+         <div class="dropdown-divider"></div>
+         }
+      }
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

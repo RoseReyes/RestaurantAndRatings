@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model restauranter.Models.Review
+<div class="row">
+  <div class="col-sm-5 col-md-6">
+      <form action="addreview" method="post">
+         <h1>Write a Review</h1>
+
+        <div class="form-group mt-5">
+            <label asp-for="reviewer_name"></label>
+            <input type="text" class="form-control"  asp-for="reviewer_name">
+            <span  class="text-danger" asp-validation-for="reviewer_name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="resto_name"></label>
+            <input type="text" class="form-control" asp-for="resto_name">
+            <span  class="text-danger" asp-validation-for="resto_name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="review"></label>
+            <textarea class="form-control vresize" rows="5" asp-for="review"></textarea>
+            <span class="text-danger" asp-validation-for="review"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="dov"></label>
+            <input id="date" class="form-control" type="date" asp-for="dov">
+            <span class="text-danger" asp-validation-for="dov">@TempData["error"]</span>
+        </div>
+        <div class="form-group">
+            <label asp-for="rating"></label>
+            <select class="form-control" asp-for="rating">
+            <span class="text-danger" asp-validation-for="rating"></span>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success ml-auto">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
